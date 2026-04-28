@@ -121,6 +121,7 @@ def main():
 
     conn = sqlite3.connect(DB_PATH)
     conn.executescript(SCHEMA_SQL)
+    conn.execute("PRAGMA foreign_keys = OFF")
     conn.commit()
     print("  ✓ Schema created\n")
 
