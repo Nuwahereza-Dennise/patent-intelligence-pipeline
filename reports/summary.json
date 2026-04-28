@@ -1,0 +1,137 @@
+{
+  "metadata": {
+    "title": "Global Patent Intelligence Report",
+    "generated": "2026-04-28T05:56:55.451187",
+    "source": "USPTO PatentsView"
+  },
+  "summary": {
+    "total_patents": 500000,
+    "total_inventors": 385142,
+    "5yr_growth_rate_%": null
+  },
+  "top_inventors": [
+    {
+      "rank": 1,
+      "name": "Shunpei Yamazaki",
+      "country": "Unknown",
+      "patents": 161
+    },
+    {
+      "rank": 2,
+      "name": "Kia Silverbrook",
+      "country": "Unknown",
+      "patents": 102
+    },
+    {
+      "rank": 3,
+      "name": "Tao Luo",
+      "country": "Unknown",
+      "patents": 97
+    },
+    {
+      "rank": 4,
+      "name": "Jonathan P. Ive",
+      "country": "Unknown",
+      "patents": 70
+    },
+    {
+      "rank": 5,
+      "name": "Kangguo Cheng",
+      "country": "Unknown",
+      "patents": 66
+    },
+    {
+      "rank": 6,
+      "name": "Peter Gaal",
+      "country": "Unknown",
+      "patents": 62
+    },
+    {
+      "rank": 7,
+      "name": "Bartley K. Andre",
+      "country": "Unknown",
+      "patents": 61
+    },
+    {
+      "rank": 8,
+      "name": "Duncan Robert Kerr",
+      "country": "Unknown",
+      "patents": 59
+    },
+    {
+      "rank": 9,
+      "name": "Richard P. Howarth",
+      "country": "Unknown",
+      "patents": 57
+    },
+    {
+      "rank": 10,
+      "name": "Junyi Li",
+      "country": "Unknown",
+      "patents": 54
+    }
+  ],
+  "top_companies": [
+    {
+      "rank": 1,
+      "name": "SAMSUNG DISPLAY CO., LTD.",
+      "patents": 10089
+    },
+    {
+      "rank": 2,
+      "name": "International Business Machines Corporation",
+      "patents": 9246
+    },
+    {
+      "rank": 3,
+      "name": "CANON KABUSHIKI KAISHA",
+      "patents": 5210
+    },
+    {
+      "rank": 4,
+      "name": "SONY GROUP CORPORATION",
+      "patents": 3659
+    },
+    {
+      "rank": 5,
+      "name": "Fujitsu Limited",
+      "patents": 3275
+    },
+    {
+      "rank": 6,
+      "name": "Kabushiki Kaisha Toshiba",
+      "patents": 3049
+    },
+    {
+      "rank": 7,
+      "name": "General Electric Company",
+      "patents": 2935
+    },
+    {
+      "rank": 8,
+      "name": "Intel Corporation",
+      "patents": 2925
+    },
+    {
+      "rank": 9,
+      "name": "LG ELECTRONICS INC.",
+      "patents": 2794
+    },
+    {
+      "rank": 10,
+      "name": "HITACHI, LTD.",
+      "patents": 2791
+    }
+  ],
+  "top_countries": [],
+  "yearly_trends": [
+    {
+      "year": 2018,
+      "total_patents": 164524
+    },
+    {
+      "year": 2019,
+      "total_patents": 335476
+    }
+  ]
+}
