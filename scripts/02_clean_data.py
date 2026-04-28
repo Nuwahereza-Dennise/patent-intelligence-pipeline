@@ -63,7 +63,10 @@ def clean_patents():
     df["abstract"]    = df["abstract"].fillna("No abstract available.")
     df["abstract"]    = clean_text(df["abstract"]).str[:2000]
     df["filing_date"] = pd.to_datetime(df["filing_date"], format="%Y-%m-%d", errors="coerce")
-    df["year"]        = df["filing_date"].dt.year.astype("Int64")
+    # Extract year directly from string (format is already YYYY-MM-DD)
+    df["year"] = df["filing_date"].str[:4].astype(float).astype("Int64")
+# Keep only valid patent years
+    df = df[df["year"].between(1976, 2025)]
     df["filing_date"] = df["filing_date"].dt.strftime("%Y-%m-%d")
     df.drop_duplicates(subset="patent_id", inplace=True)
 
