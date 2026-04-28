@@ -20,7 +20,7 @@ RAW_DIR   = os.path.join(BASE, "data", "raw")
 CLEAN_DIR = os.path.join(BASE, "data", "clean")
 os.makedirs(CLEAN_DIR, exist_ok=True)
 
-SAMPLE_SIZE = None  # change to 500_000 if your PC is slow
+SAMPLE_SIZE = 500000  # change to 500_000 if your PC is slow
 
 def read_tsv(filename, usecols, nrows=None):
     path = os.path.join(RAW_DIR, filename)
@@ -62,7 +62,7 @@ def clean_patents():
     df["title"]       = clean_text(df["title"])
     df["abstract"]    = df["abstract"].fillna("No abstract available.")
     df["abstract"]    = clean_text(df["abstract"]).str[:2000]
-    df["filing_date"] = pd.to_datetime(df["filing_date"], errors="coerce")
+    df["filing_date"] = pd.to_datetime(df["filing_date"], format="%Y-%m-%d", errors="coerce")
     df["year"]        = df["filing_date"].dt.year.astype("Int64")
     df["filing_date"] = df["filing_date"].dt.strftime("%Y-%m-%d")
     df.drop_duplicates(subset="patent_id", inplace=True)
