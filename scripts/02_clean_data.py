@@ -59,14 +59,15 @@ def clean_patents():
     df.dropna(subset=["patent_id", "title", "filing_date"], inplace=True)
     print(f"  Dropped {before - len(df):,} rows with missing fields")
 
-    df["title"]       = clean_text(df["title"])
-    df["abstract"]    = df["abstract"].fillna("No abstract available.")
-    df["abstract"]    = clean_text(df["abstract"]).str[:2000]
-    # Extract year directly from string (format is already YYYY-MM-DD)
+    df["title"]    = clean_text(df["title"])
+    df["abstract"] = df["abstract"].fillna("No abstract available.")
+    df["abstract"] = clean_text(df["abstract"]).str[:2000]
+
+# Extract year directly using regex
     df["year"] = df["filing_date"].str.extract(r'(\b(19|20)\d{2}\b)')[0].astype("Int64")
 # Keep only valid patent years
     df = df[df["year"].between(1976, 2025)]
-    df["filing_date"] = df["filing_date"].dt.strftime("%Y-%m-%d")
+
     df.drop_duplicates(subset="patent_id", inplace=True)
 
     df.to_csv(os.path.join(CLEAN_DIR, "clean_patents.csv"), index=False)
