@@ -45,7 +45,11 @@ def clean_patents():
     patents = read_tsv("g_patent.tsv",
                        usecols=["patent_id", "patent_title", "patent_date"],
                        nrows=SAMPLE_SIZE)
-    patents.columns = ["patent_id", "title", "filing_date"]
+    patents = patents.rename(columns={
+        "patent_id":    "patent_id",
+        "patent_title": "title",
+        "patent_date":  "filing_date"
+    })
 
     abstracts = read_tsv("g_patent_abstract.tsv",
                          usecols=["patent_id", "patent_abstract"],
@@ -63,9 +67,9 @@ def clean_patents():
     df["abstract"] = df["abstract"].fillna("No abstract available.")
     df["abstract"] = clean_text(df["abstract"]).str[:2000]
 
-# Extract year directly using regex
+    # Extract year directly using regex
     df["year"] = df["filing_date"].str.extract(r'(\b(19|20)\d{2}\b)')[0].astype("Int64")
-# Keep only valid patent years
+    # Keep only valid patent years
     df = df[df["year"].between(1976, 2025)]
 
     df.drop_duplicates(subset="patent_id", inplace=True)
