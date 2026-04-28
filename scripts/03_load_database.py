@@ -100,7 +100,7 @@ def bulk_insert(conn: sqlite3.Connection, table: str, df: pd.DataFrame,
     inserted = 0
     for start in range(0, total, chunk_size):
         chunk = df.iloc[start : start + chunk_size]
-        chunk.to_sql(table, conn, if_exists="append", index=False, method="multi")
+        chunk.to_sql(table, conn, if_exists="append", index=False)
         inserted += len(chunk)
         pct = inserted / total * 100
         print(f"    [{table}] {inserted:,} / {total:,} rows ({pct:.0f}%)", end="\r")
